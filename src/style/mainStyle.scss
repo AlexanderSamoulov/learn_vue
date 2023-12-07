@@ -1,0 +1,49 @@
+@import "./variables.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .app {
+    margin: 10px;
+  }
+  .post {
+    border: 2px solid $main-border-color;
+    padding: 5px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+/*   .btn {
+    align-self: flex-end;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: none;
+    color: $main-text-color;
+    border: 1px solid $main-border-color;
+  } */
+  .inp {
+    width: 100%;
+    border: 1px solid $main-border-color;
+    padding: 5px;
+    margin-top: 10px;
+  }
+
+  my-button{
+    padding: 10px 15px;
+    background: none;
+    color: $main-text-color;
+    border: 1px solid $main-border-color;
+    border-radius: 5px;
+    &:hover{
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+
