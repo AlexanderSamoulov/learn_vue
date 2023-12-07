@@ -11,9 +11,10 @@
         type="text"
         placeholder="Описание"
       />
-      <My-button  @click="createPost">Добавить</My-button>
+      <my-button  @click="createPost">Добавить</my-button>
     </form>
 </template>
+
 <script>
 export default {
     data(){
@@ -40,6 +41,15 @@ export default {
     },
    
   },
+/*   watch:{
+    post:{
+      handler(newVal){
+        console.log(newVal,'watch');
+      },
+      deep:true
+      
+    }
+  } */
 }
 </script>
 <style scoped>

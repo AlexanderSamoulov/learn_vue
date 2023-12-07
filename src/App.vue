@@ -7,12 +7,12 @@
     :options="sortOptions"
     >
     </my-select>
-    <My-button @click="showDialog">Создать пост</My-button>
+    <my-button @click="showDialog">Создать пост</my-button>
     </header>
     <my-dialog v-model:show="dialogVisible">
       <PostForm  @create="createPost"/>
     </my-dialog>
-   <PostList :posts="posts" @remove="removePost" v-if="isLoad"/>
+   <PostList :posts="sortedPosts" @remove="removePost" v-if="isLoad"/>
    <div class="loadBar" v-else><img src="https://usagif.com/wp-content/uploads/loading-65.gif" alt="" srcset=""></div>
   </div>
 </template>
@@ -64,12 +64,13 @@ export default {
   mounted() {
       this.fechPosts()
     },
-    watch:{
-      selectedSort(newValue){
-      },
-      dialogVisible(newValue){
-
+    computed:{
+      sortedPosts(){
+        return [...this.posts].sort((post1,post2)=>post1[this.selectedSort]?.localeCompare(post2[this.selectedSort]))
       }
+    },
+    watch:{
+     
     }
 };
 </script>
